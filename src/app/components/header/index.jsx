@@ -11,7 +11,7 @@ export default function Header() {
             <header className="header">
                 <nav className="header__wrapper">
                     <div className="header__wrapper-image">
-                        {/* <Logo /> */}
+                   Logo
                     </div>
                     <section className="header__wrapper__section">
                         <ul className="header__wrapper__section-links">
@@ -19,10 +19,10 @@ export default function Header() {
                                 <Link href="/">Hjem</Link>
                             </li>
                             <li>
-                                <Link href="/price">Priser</Link>
+                                <Link href="/tilbud">Tilbud</Link>
                             </li>
                             <li>
-                                <Link href="./contact">Contact</Link>
+                                <Link href="./kontakt">Kontakt</Link>
                             </li>
                         </ul>
                     </section>

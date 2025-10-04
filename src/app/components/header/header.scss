@@ -1,10 +1,12 @@
+@use "../../root.scss";
+
 .header {
     &__wrapper {
         padding: 2rem;
         width: 85%;
         margin: 0 auto;
         align-items: center;
-        border-bottom: 1px solid #D9D9D9;
+        border-bottom: 1px solid #e6eef6;
         display: flex;
         justify-content: space-between;
 
@@ -20,7 +22,8 @@
                 gap: 1.5rem;
                 font-size: 18px;
                 :hover {
-                    color: red;
+                  color: var(--accent);
+        text-decoration: underline;
                 }
             }
         }
