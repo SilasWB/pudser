@@ -39,14 +39,11 @@ export default function Footer() {
                 <p className="footer__copyright">
                     © {year} Din Lokale Pudser. Alle rettigheder forbeholdes.
                 </p>
-                <ul className="footer__policies">
+                <section className="footer__policies">
                     <li className="footer__policies-item">
-                        <a href="/privat">Privatlivspolitik</a>
+                        <Link href="/privat">Handels og Salgs Betingelser</Link>
                     </li>
-                    <li className="footer__policies-item">
-                        <a href="/betingelser">Betingelser</a>
-                    </li>
-                </ul>
+                </section> 
             </div>
         </footer>
     );

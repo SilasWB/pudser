@@ -1,3 +1,4 @@
+@use "../../root.scss";
 
 
 .contact {
@@ -7,7 +8,7 @@
     margin: 0 auto;
     justify-content: center;
     padding: 1.5rem;
-    border: 1px solid #D9D9D9;
+    border: 1px solid var(--border);
     row-gap: 1rem;
 
     &-wrap {
@@ -40,13 +41,13 @@ p {
     &__search-input {
         width: 100%;
         padding: 0.5rem;
-        border: 1px solid #D9D9D9;
+        border: 1px solid var(--border);
         border-radius: 8px;
     }
 
 button {
-border: 1px solid #2C2C2C;
-background-color: #2C2C2C;
+border: 1px solid var(--border);
+background-color: var(--accent);
 color: #F5F5F5;
 padding: 0.5rem;
 font-size: 16px;

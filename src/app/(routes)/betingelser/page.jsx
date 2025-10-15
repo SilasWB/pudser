@@ -11,7 +11,7 @@ export default function Betingelser() {
         <>
            <Header />
            <main>
-    
+    <h1>Handels og SalgsBetingelser</h1>
 </main>
            <Footer />
         </>
