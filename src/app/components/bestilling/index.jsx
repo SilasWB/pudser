@@ -6,7 +6,6 @@ import "./bestilling.scss";
 export default function Bestilling() {
   const [adresse, setAdresse] = useState("");
   const [kvadratmeter, setKvadratmeter] = useState("");
-  const [sprosser, setSprosser] = useState(0);
   const [tagVinduer, setTagVinduer] = useState(0);
   const [udestue, setUdestue] = useState(false);
   const [interval, setInterval] = useState("1gang");
@@ -22,17 +21,16 @@ export default function Bestilling() {
     else if (kvadratmeter > 200) prisPerM2 = 245;
 
     let total = kvadratmeter * prisPerM2;
-    total += sprosser * 1;
     total += tagVinduer * 10;
     if (udestue) total += 45;
 
-    // interval tillæg
+   
     if (interval === "1gang") total += 150;
     if (interval === "hver8") total += 20;
-    // hver4 = 0 kr, så vi gør intet
+
 
     setPris(total);
-  }, [kvadratmeter, sprosser, tagVinduer, udestue, interval]);
+  }, [kvadratmeter, tagVinduer, udestue, interval]);
 
   return (
     <section className="bestilling">
@@ -61,17 +59,6 @@ export default function Bestilling() {
                 onChange={(e) => setKvadratmeter(Number(e.target.value))}
               />
             </label>
-
-            <label>
-              <h5>Antal sprosser</h5>
-              <input
-                type="number"
-                placeholder="Fx 5"
-                value={sprosser}
-                onChange={(e) => setSprosser(Number(e.target.value))}
-              />
-            </label>
-
             <label>
               <h5>Antal tagvinduer</h5>
               <input
