@@ -9,7 +9,7 @@ export default function Home() {
     <main>
        <section className="main-cta">
   <h2 className="main-cta__title">Første Vinduespudsning får du til 99 kr.</h2>
-  <span>Max 30 vinduer og 2 etager</span>
+  <span>Max 30 kun udendørsvinduer og 2 etager</span>
   <Link href="/kontakt" className="main-cta__button">Kontakt os</Link>
 </section>
 <section className="about">
