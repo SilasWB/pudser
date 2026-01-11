@@ -26,10 +26,10 @@ export default function Footer() {
                         Telefon: <Link href="tel:+4525254945">+45 25 25 49 45</Link>
                     </div>
                     <div className="footer__contact-item">
-                        Email: <Link href="mailto:din@lokalepudser.dk">din@lokalepudser.dk</Link>
+                        Email: <Link href="mailto:din@lokalepudser.dk">kontakt@dinlokalepudser.nu</Link>
                     </div>
                     <div className="footer__contact-item footer__contact-item--small">
-                        CVR: 12345678
+                        CVR: 45912922
                     </div>
                 </address>
 

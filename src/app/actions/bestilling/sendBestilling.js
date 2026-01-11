@@ -1,40 +1,55 @@
 "use server";
+
+import { Resend } from "resend";
 import z from "zod";
 
-export default async function SendBestilling(prevState, formData) {
-  const kvadrat = formData.get("kvadrat");
-  const glas = formData.get("glas");
-  const tagvinduer = formData.get("tagvinduer");
-  const udestue = formData.get("udestue");
-  const interval = formData.get("interval");
-  const adresse = formData.get("adresse");
+const resend = new Resend(process.env.RESEND_API_KEY);
 
+export default async function sendBestilling(prevState, formData) {
   const schema = z.object({
-    kvadrat: z.string().min(1, { message: "Vælg antal kvadratmeter" }),
-    glas: z.string().min(1, { message: "Angiv antal glas" }),
-    tagvinduer: z.string().min(1, { message: "Angiv antal tagvinduer" }),
-    udestue: z.string().min(1, { message: "Vælg om du har udestue" }),
-    interval: z.string().min(1, { message: "Vælg interval" }),
-    adresse: z.string().min(1, { message: "Indtast adresse og postnummer" }),
+    email: z.string().email(),
+    adresse: z.string().min(5),
+    kvadratmeter: z.coerce.number().min(1),
+    tagVinduer: z.coerce.number().min(0),
+    udestue: z.coerce.boolean(),
+    interval: z.string(),
   });
 
-  const validated = schema.safeParse({
-    kvadrat,
-    glas,
-    tagvinduer,
-    udestue,
-    interval,
-    adresse,
+  const parsed = schema.safeParse({
+    email: formData.get("email"),
+    adresse: formData.get("adresse"),
+    kvadratmeter: formData.get("kvadratmeter"),
+    tagVinduer: formData.get("tagVinduer"),
+    udestue: formData.get("udestue") === "true",
+    interval: formData.get("interval"),
   });
 
- if (!validated.success) return {
-        ...validated,
-        ...(z.treeifyError(validated.error))
-    }
+  if (!parsed.success) {
+    console.log(parsed.error.flatten());
+    return { success: false };
+  }
 
-  
-  return {
-    success: true,
-    message: "Bestilling sendt!",
-  };
+  const data = parsed.data;
+
+  try {
+    await resend.emails.send({
+   from: "Vinduespudsning <no-reply@dinlokalepudser.dk>",
+to: ["silaslarsen80@gmail.com"],
+replyTo: data.email,
+      subject: "Ny forespørgsel på vinduespudsning",
+      html: `
+        <p>Email: ${data.email}</p>
+        <p>Adresse: ${data.adresse}</p>
+        <p>Kvadratmeter: ${data.kvadratmeter}</p>
+        <p>Tagvinduer: ${data.tagVinduer}</p>
+        <p>Udestue: ${data.udestue ? "Ja" : "Nej"}</p>
+        <p>Interval: ${data.interval}</p>
+      `,
+    });
+  } catch (err) {
+    console.error("RESEND ERROR:", err);
+    return { success: false };
+  }
+
+  return { success: true };
 }
