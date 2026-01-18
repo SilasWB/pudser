@@ -16,48 +16,56 @@ export default function Bestilling() {
 
   return (
     <section className="bestilling">
-      <form action={formAction} className="bestilling-wrap">
+  <h1>Send forespørgsel</h1>
 
-        {/* EMAIL */}
+  <form action={formAction} className="bestilling__form">
+    <div className="bestilling__left">
+
+      <label>
+        Email
         <input
           type="email"
           name="email"
-          placeholder="Email"
           required
           value={email}
           onChange={e => setEmail(e.target.value)}
         />
+      </label>
 
-        {/* ADRESSE */}
+      <label>
+        Adresse
         <input
           name="adresse"
-          placeholder="Adresse"
           required
           value={adresse}
           onChange={e => setAdresse(e.target.value)}
         />
+      </label>
 
-        {/* KVADRATMETER */}
+      <label>
+        Kvadratmeter
         <input
           name="kvadratmeter"
           type="number"
-          placeholder="Kvadratmeter (m²)"
           required
           value={kvadratmeter}
           onChange={e => setKvadratmeter(e.target.value)}
         />
+      </label>
 
-        {/* TAGVINDUER */}
+      <label>
+        Antal vinduer
         <input
           name="tagVinduer"
           type="number"
           min="0"
-          placeholder="Antal vinduer"
           value={tagVinduer}
           onChange={e => setTagVinduer(Number(e.target.value))}
         />
+      </label>
 
-        {/* INTERVAL */}
+      <label>
+        Interval
         <select
           name="interval"
           value={interval}
@@ -67,23 +75,32 @@ export default function Bestilling() {
           <option value="hver4">Hver 4. uge</option>
           <option value="hver8">Hver 8. uge</option>
         </select>
+      </label>
+<label className="bestilling__checkbox">
+  <span>Har udestue</span>
+  <input
+    type="checkbox"
+    name="udestue"
+    value="true"
+    checked={udestue}
+    onChange={e => setUdestue(e.target.checked)}
+  />
+</label>
 
-        {/* UDESTUE */}
-        <label>
-          <input
-            type="checkbox"
-            name="udestue"
-            value="true"
-            checked={udestue}
-            onChange={e => setUdestue(e.target.checked)}
-          />
-          Har udestue
-        </label>
+    </div>
 
-        <button type="submit">Send forespørgsel</button>
+    <div className="bestilling__right">
+      <h2>Forespørgsel</h2>
+      <p>Vi kontakter dig hurtigst muligt</p>
 
-        {formState?.success && <p>✅ Forespørgsel sendt!</p>}
-      </form>
-    </section>
+      <button type="submit">Send forespørgsel</button>
+
+      {formState?.success && (
+        <p className="success">✅ Forespørgsel sendt</p>
+      )}
+    </div>
+  </form>
+</section>
+
   );
 }
