@@ -3,6 +3,7 @@
 import React from "react";
 import "./footer.scss";
 import Link from "next/link";
+import Logo from "../logo";
 
 export default function Footer() {
     const year = "2025";
@@ -12,7 +13,7 @@ export default function Footer() {
             <div className="footer__container">
 
                 <div className="footer__brand">
-                    <div className="footer__logo">Logo</div>
+                    <div className="footer__logo"> <Logo /> </div>
                     <div className="footer__brand-info">
                         <h3 className="footer__company">Din Lokale Pudser</h3>
                         <p className="footer__tagline">
