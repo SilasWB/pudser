@@ -11,6 +11,10 @@
     border: 1px solid var(--border);
     row-gap: 1rem;
 
+    &__main {
+        height: 60vh;
+    }
+
     &-wrap {
         display: flex;
         flex-direction: column;

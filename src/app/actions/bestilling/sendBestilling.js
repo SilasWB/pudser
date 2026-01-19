@@ -13,6 +13,7 @@ export default async function sendBestilling(prevState, formData) {
     tagVinduer: z.coerce.number().min(0),
     udestue: z.coerce.boolean(),
     interval: z.string(),
+ besked: z.string().max(500).optional(),
   });
 
   const parsed = schema.safeParse({
@@ -22,10 +23,11 @@ export default async function sendBestilling(prevState, formData) {
     tagVinduer: formData.get("tagVinduer"),
     udestue: formData.get("udestue") === "true",
     interval: formData.get("interval"),
+ besked: formData.get("besked") || "",
   });
 
   if (!parsed.success) {
-    console.log(parsed.error.flatten());
+    console.log(parsed.error.format());
     return { success: false };
   }
 
@@ -44,6 +46,7 @@ replyTo: data.email,
         <p>Tagvinduer: ${data.tagVinduer}</p>
         <p>Udestue: ${data.udestue ? "Ja" : "Nej"}</p>
         <p>Interval: ${data.interval}</p>
+  <p>Besked: ${data.besked || "-"}</p>
       `,
     });
   } catch (err) {

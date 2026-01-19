@@ -11,7 +11,7 @@ export default function Kontakt() {
     return (
         <>
            <Header />
-           <main>
+           <main className="contact__main">
      <KontaktMigForm />
 </main>
            <Footer />

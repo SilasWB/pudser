@@ -42,7 +42,7 @@ export default function Footer() {
                 </p>
                 <section className="footer__policies">
                     <li className="footer__policies-item">
-                        <Link href="/privat">Handels og Salgs Betingelser</Link>
+                        <Link href="/betingelser">Handels og Salgs Betingelser</Link>
                     </li>
                 </section> 
             </div>

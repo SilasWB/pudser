@@ -13,7 +13,7 @@ export default function KontaktMigForm() {
 
         <label>
           <span>Email</span>
-          <input
+          <input className="contact__search-input"
             type="email"
             name="email"
             defaultValue={formState?.data?.email}
@@ -23,7 +23,7 @@ export default function KontaktMigForm() {
 
         <label>
           <span>Navn</span>
-          <input
+          <input className="contact__search-input"
             type="text"
             name="name"
             defaultValue={formState?.data?.name}
@@ -33,7 +33,7 @@ export default function KontaktMigForm() {
 
         <label>
           <span>Besked</span>
-          <input
+          <input className="contact__search-input"
             type="text"
             name="message"
             defaultValue={formState?.data?.message}
@@ -46,7 +46,7 @@ export default function KontaktMigForm() {
         </button>
 
         {formState?.success && (
-          <p className="success">Besked sendt</p>
+          <p className="success"> Besked sendt</p>
         )}
 
         {formState?.serverError && (

@@ -63,7 +63,15 @@ export default function Bestilling() {
           onChange={e => setTagVinduer(Number(e.target.value))}
         />
       </label>
-
+ <label>
+            Besked (valgfri)
+            <textarea
+              name="besked"
+              placeholder="Skriv en besked til os…"
+              onChange={e => setBesked(e.target.value)}
+               maxLength={500}
+            />
+          </label>
       <label>
         Interval
         <select
