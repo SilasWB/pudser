@@ -1,0 +1,65 @@
+@use "../../root.scss";
+
+
+
+.info {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: "Inter", sans-serif;
+  color: #0f172a;
+  line-height: 1.6;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 32px;
+    text-align: center;
+    color: #111827;
+  }
+
+  &__section {
+    margin-bottom: 32px;
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #1e293b;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 12px;
+      color: #475569;
+
+      a {
+        color: #2563eb; // blå farve til links
+        text-decoration: underline;
+
+        &:hover {
+          color: #1d4ed8;
+        }
+      }
+    }
+  }
+
+  // Responsiv til mobil
+  @media (max-width: 720px) {
+    padding: 20px 16px;
+
+    h1 {
+      font-size: 1.75rem;
+    }
+
+    &__section {
+      h2 {
+        font-size: 1.125rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  }
+}
