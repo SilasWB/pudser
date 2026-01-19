@@ -34,7 +34,7 @@ export default async function KontaktMig(prevState, formData) {
   try {
     await resend.emails.send({
   from: "Din Lokale Pudser <kontakt@dinlokalepudser.nu>",
-      to: ["silaslarsen80@gmail.com"], 
+      to: ["kontakt@dinlokalepudser.nu"], 
       replyTo: data.email,
       subject: "Ny kontaktformular",
       html: `

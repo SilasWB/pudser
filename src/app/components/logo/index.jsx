@@ -7,7 +7,7 @@ export default function Logo() {
     return (
         <Link href="/">
           <div className="logo-wrap">
-            <Image src={logo} width={175} height={175} alt="Logo"/>
+            <Image src={logo} width={150} height={150} alt="Logo"/>
           </div>    
         </Link>
     )
