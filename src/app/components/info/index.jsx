@@ -24,7 +24,7 @@ export default function Info() {
       <section className="info__section">
         <h2>Produktinformation</h2>
         <p>
-          Vi tilbyder professionel vinduespolering (udvendigt). 
+          Vi tilbyder professionel vinduespolering (udvendigt) i trekantsområdet og omegn. 
           Normal vinduespolering fjerner daglig snavs og skidt, men 
           silikone, klistermærker og rester herfra vil ikke blive fjernet.
         </p>
@@ -37,7 +37,7 @@ export default function Info() {
       <section className="info__section">
         <h2>Betaling</h2>
         <p>
-          Betaling sker via faktura, som sendes til den e-mail, du har oplyst. 
+          Betaling sker via faktura som sendes til den e-mail, du har oplyst ellers kan man betale over mobilepay igennem aftale. 
           Fakturaen fremsendes normalt næste hverdag efter udført polering.
         </p>
         <p>
