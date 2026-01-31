@@ -33,7 +33,7 @@ export default function KontaktMigForm() {
 
         <label>
           <span>Besked</span>
-          <input className="contact__search-input"
+          <textarea className="contact__search-input"
             type="text"
             name="message"
             defaultValue={formState?.data?.message}

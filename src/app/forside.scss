@@ -77,11 +77,23 @@ main {
 }
 
 /* ---------- ABOUT ---------- */
+
+
+
 .about {
-  max-width: 800px;
+  max-width: 600px;
   text-align: center;
   line-height: 1.6;
+&-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 
+  img {
+    border-radius: 39px;
+  }
+}
   h2 {
     font-size: 1.8rem;
     color: var(--accent);

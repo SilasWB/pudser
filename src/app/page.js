@@ -2,6 +2,9 @@ import Link from "next/link";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import "./forside.scss"
+import Image from "next/image";
+
+import lucas from "@/imgs/lucas.jpg";
 export default function Home() {
   return (
     <>
@@ -12,14 +15,20 @@ export default function Home() {
   <span>Max 30 vinduer, kun udendørsvask og 2 etager (KUN i trekantsområdet og omegn)</span>
   <Link href="/kontakt" className="main-cta__button">Kontakt os</Link>
 </section>
-<section className="about"> 
+<article className="about-wrap">
+  <Image src={lucas} width={1080} height={725} alt="forside-billede" />
+  <section className="about"> 
   <h2>Om os</h2>
   <p>Vi er et nyere og engageret vinduespudserfirma, der brænder for at levere rene og skinnende vinduer til både private og erhverv.
 
 Selvom vi er en ny virksomhed, går vi ikke på kompromis med kvaliteten. Vi tror på god service, klare aftaler og tilfredse kunder - hver gang.
 
 Hos os får du personlig kontakt, gennemsigtige priser og et resultat, du kan være stolt af at vise frem.</p>
+
 </section>
+
+</article>
+
 <section className="benefits">
   <h2>Derfor vælger kunder os</h2>
   <ul>
