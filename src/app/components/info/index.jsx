@@ -27,6 +27,7 @@ export default function Info() {
           Vi tilbyder professionel vinduespolering (udvendigt) i trekantsområdet og omegn. 
           Normal vinduespolering fjerner daglig snavs og skidt, men 
           silikone, klistermærker og rester herfra vil ikke blive fjernet.
+          Priser fra 199 kr.
         </p>
         <p>
           Inden udvendig vinduespolering skal områder ude foran vinduerne være ryddet. 
@@ -46,7 +47,7 @@ export default function Info() {
         </p>
         <p>
           Afbestillinger skal ske senest 24 timer før aftalt tid. Ved senere aflysning opkræves 
-          et afbestillingsgebyr på 280 kr. for privatkunder og 380 kr. for erhvervskunder pr. time.
+          et afbestillingsgebyr på 100 kr. for privatkunder og 120 kr. for erhvervskunder pr. time.
         </p>
       </section>
 

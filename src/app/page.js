@@ -11,12 +11,23 @@ export default function Home() {
     <Header />
     <main>
        <section className="main-cta">
-  <h2 className="main-cta__title">Få din første vinduespudsning til KUN 99 kr!</h2>
-  <span>Max 30 vinduer, kun udendørsvask og 2 etager (KUN i trekantsområdet og omegn)</span>
+  <h2 className="main-cta__title">Din Lokale Pudser</h2>
+  <span>Velkommen til din lokale vinduespudser med fokus på kvalitet, punktlighed og klare aftaler. Jeg driver et vinduespudserfirma, hvor grundighed, pålidelighed og øje for detaljen er i centrum - og hvor jeg aldrig går på kompromis med resultatet. </span>
+  <span>Du er velkommen til at kontakte os nedenfor for et tilbud.</span>
   <Link href="/kontakt" className="main-cta__button">Kontakt os</Link>
 </section>
 <article className="about-wrap">
-  <Image src={lucas} width={1080} height={725} alt="forside-billede" />
+  <Image
+    src={lucas}
+    alt="forside-billede"
+    sizes="(max-width: 1080px) 100vw, 1080px"
+    style={{
+      width: "100%",
+      height: "auto",
+    }}
+    priority
+  />
+
   <section className="about"> 
   <h2>Om os</h2>
   <p>Vi er et nyere og engageret vinduespudserfirma, der brænder for at levere rene og skinnende vinduer til både private og erhverv.
