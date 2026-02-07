@@ -27,7 +27,7 @@ export default function Info() {
           Vi tilbyder professionel vinduespolering (udvendigt) i trekantsområdet og omegn. 
           Normal vinduespolering fjerner daglig snavs og skidt, men 
           silikone, klistermærker og rester herfra vil ikke blive fjernet.
-          Priser fra 199 kr.
+          Priser starter fra 199 kr.
         </p>
         <p>
           Inden udvendig vinduespolering skal områder ude foran vinduerne være ryddet. 
